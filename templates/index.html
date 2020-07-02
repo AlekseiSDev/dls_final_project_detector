@@ -5,8 +5,19 @@
     <title>{{ title }}</title>
 </head>
 <body>
-<h1>{{ h1 }}</h1>
-    <a href="/test_page">Тест страничка нах</a><br>
-    <img src="{{ user_image }}" alt="User Image">
+<h1>Оригинальная картинка</h1>
+    <form method=post enctype=multipart/form-data>
+    <!-- single file for the "profile" field -->
+        <input type=file name=file>
+        <!-- multiple files for the "charts" field -->
+        <!--<input type=file multiple name=charts>-->
+        <input type=submit value=Upload>
+    </form>
+
+    <div>{{ picture_original }}</div>
+    <img src="{{ picture_original }}" alt="User Image">
+<h1>Картинка с object detection</h1>
+    <div>{{ picture_with_bb }}</div>
+    <img src="{{ picture_with_bb }}" alt="Edited picture">
 </body>
 </html>

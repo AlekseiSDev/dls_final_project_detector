@@ -8,7 +8,6 @@ Flask==1.1.2
 gunicorn==20.0.4
 imagecodecs==2020.2.18
 imageio==2.8.0
-itsdangerous==1.1.0
 Jinja2==2.11.2
 MarkupSafe==1.1.1
 networkx==2.4
@@ -16,10 +15,7 @@ pycparser==2.20
 pyOpenSSL==19.1.0
 PySocks==1.7.1
 PyWavelets==1.1.1
-scikit-image==0.17.2
-scipy==1.4.1
 six==1.15.0
-tensorflow==2.2.0
 tifffile==2020.5.11
 urllib3==1.25.9
 Werkzeug==1.0.1

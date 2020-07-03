@@ -1,9 +1,6 @@
-import torch
 import torchvision
 import numpy as np
-import PIL
 import cv2
-
 
 class model():
 
@@ -25,14 +22,11 @@ class model():
                 'microwave', 'oven', 'toaster', 'sink', 'refrigerator', 'blender', 'book',
                 'clock', 'vase', 'scissors', 'teddy bear', 'hair drier', 'toothbrush', 'hair brush']
 
-    def get_predict(self, in_path, out_path, img_name):
-        image = PIL.Image.open(in_path + img_name)
-        img = cv2.imread(in_path + img_name)
-        image_tensor = torchvision.transforms.functional.to_tensor(image)
+    def get_predict(self, image_pil, img_cv):
+        image_tensor = torchvision.transforms.functional.to_tensor(image_pil)
         output = self.model([image_tensor])
-        out_img = self.__create_img_from_out(img, output, self.classes)
-        cv2.imwrite(out_path + img_name, out_img)
-        return out_path + img_name
+        out_img = self.__create_img_from_out(img_cv, output, self.classes)
+        return out_img
 
 
     def __create_img_from_out(self, img, output, classes):

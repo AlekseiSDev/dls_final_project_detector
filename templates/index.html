@@ -7,16 +7,16 @@
 <body>
 <h1>Оригинальная картинка</h1>
     <form method=post enctype=multipart/form-data>
-    <!-- single file for the "profile" field -->
         <input type=file name=file>
-        <!-- multiple files for the "charts" field -->
-        <!--<input type=file multiple name=charts>-->
-        <input type=submit value=Upload>
+        <input type=submit name="submit_button" value=Upload>
     </form>
 
     <div>{{ picture_original }}</div>
     <img src="{{ picture_original }}" alt="User Image">
 <h1>Картинка с object detection</h1>
+    <form method=post enctype=multipart/form-data>
+        <input type="submit" name="submit_button" value="process_picture">
+    </form>
     <div>{{ picture_with_bb }}</div>
     <img src="{{ picture_with_bb }}" alt="Edited picture">
 </body>

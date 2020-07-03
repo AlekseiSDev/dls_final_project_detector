@@ -34,7 +34,6 @@ def hello_world():
             file = request.files['file']
             if file and __allowed_file(file.filename):
                 filename = secure_filename(file.filename)
-                # TODO: рот ебал этих путей
                 in_app_path = os.path.join(UPLOAD_FOLDER, filename)
                 save_path = os.path.join(UPLOADS_ABS_PATH, filename)
 
@@ -56,10 +55,7 @@ def test_page():
     return render_template('test_page.html', title='Home', user=user)
 
 
-# TODO: обработка изображения, пока заглашука
 def process_img(img_path, out_path):
-    #TODO: чтение изображения в cv и PIL форматах
-
     image_pil= PIL.Image.open(img_path)
     img_cv = cv2.imread(img_path)
 
